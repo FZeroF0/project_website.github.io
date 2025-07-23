@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unplug & Reconnect - Anti-Social Media Campaign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Typography */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50; /* Darker blue/grey for headings */
+        }
+
+        a {
+            color: #3498db; /* A blue for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: ;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px; /* Ensure a good height */
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: #27ae60; /* Green button */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2ecc71;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #eef4f7; /* Light background for alternating sections */
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+        /* Warning Signs Section */
+        #warning-signs {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #f9f9f9; /* Light background */
+        }
+
+        #warning-signs h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #warning-signs .highlight-text {
+            color: #ff6f61; /* Orange-red color from your image */
+        }
+
+        .section-description {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .warning-signs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .warning-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left; /* Align text within card as in image */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align icon and text to start */
+        }
+
+        .warning-item h3 {
+            font-size: 1.4em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .warning-item p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Makes it a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid; /* For the colored border */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .icon-box .icon {
+            font-size: 1.8em;
+            line-height: 1; /* Adjust line height to center unicode icons */
+        }
+
+        .red-border {
+            border-color: #ff6f61; /* Orange-red border */
+        }
+
+        .red-border .icon {
+            color: #ff6f61; /* Orange-red icon color */
+        }
+
+        .green-border {
+            border-color: #27ae60; /* Green border */
+        }
+
+        .green-border .icon {
+            color: #27ae60; /* Green icon color */
+        }
+
+        .warning-callout {
+            background-color: #ffebeb; /* Light red background */
+            border: 1px solid #ffcccc; /* Slightly darker red border */
+            border-left: 5px solid #ff6f61; /* Highlight left border */
+            padding: 25px 30px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .warning-callout .callout-icon {
+            font-size: 2em;
+            color: #ff6f61;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .warning-callout p {
+            margin: 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .warning-callout p strong {
+            color: #ff6f61; /* Highlight bold text in the callout */
+        }
+
+        /* Adjust responsive for warning signs */
+        @media (max-width: 768px) {
+            .warning-signs-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+
+            .warning-item {
+                align-items: center; /* Center items in stacked view */
+                text-align: center;
+            }
+        }
+        /* Why Unplug Section */
+        .why-unplug-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .why-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .why-item .icon {
+            font-size: 3em; /* Use a font icon library like Font Awesome for actual icons */
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .why-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        /* Practical Solutions Section */
+        #practical-solutions {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #eef4f7; /* Light background for alternating section */
+        }
+
+        #practical-solutions h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #practical-solutions .highlight-text-green {
+            color: #4CAF50; /* A fresh green color from your image */
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .solution-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 5px solid #E8F5E9; /* Light green border for top, subtle */
+        }
+
+        .solution-item h3 {
+            font-size: 1.4em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .solution-item p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1; /* Allows text to grow and push action step to bottom */
+            margin-bottom: 20px; /* Space before action step */
+        }
+
+        .green-icon-box {
+            border-color: #4CAF50; /* Green border color */
+            background-color: #E8F5E9; /* Very light green background */
+        }
+
+        .green-icon-box .icon {
+            color: #4CAF50; /* Green icon color */
+        }
+
+        .action-step {
+            display: flex;
+            align-items: center;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #4CAF50;
+            margin-top: auto; /* Pushes the action step to the bottom of the card */
+        }
+
+        .action-step .action-icon {
+            font-size: 1.2em;
+            margin-right: 8px;
+            color: #4CAF50;
+            line-height: 1; /* For better vertical alignment of unicode arrow */
+        }
+
+        .action-step a {
+            color: #4CAF50;
+            text-decoration: none;
+            border-bottom: 1px dotted #4CAF50; /* Dotted underline */
+        }
+
+        .action-step a:hover {
+            text-decoration: none;
+            border-bottom: 1px solid #4CAF50; /* Solid underline on hover */
+        }
+
+        /* Responsive adjustments for solutions */
+        @media (max-width: 768px) {
+            .solutions-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+
+            .solution-item {
+                align-items: flex-start; /* Keep text left-aligned even when stacked */
+                text-align: left;
+            }
+        }
+        /* Other Sections (Our Mission, Resources, Get Involved, Contact) */
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resources-list ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .resources-list li {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: calc(33% - 40px); /* Approx 3 items per row, accounting for gap */
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .resources-list li h3 {
+            margin-top: 0;
+            font-size: 1.3em;
+            color: #2c3e50;
+        }
+
+        .get-involved-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .involved-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .involved-item .btn {
+            display: inline-block; /* Make button fill its content width */
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50; /* Darker footer */
+            color: #ecf0f1; /* Light text */
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #ecf0f1;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Responsive Design (Basic) */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resources-list li {
+                width: 100%; /* Stack items on small screens */
+            }
+        }
+        #home.hero {
+        position: relative;
+        color: white; /* Make text visible */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        overflow: hidden; /* Make sure pseudo-element doesn’t overflow */
+      }
+      
+      #home.hero::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('https://uploads.onecompiler.io/43rhsgwts/43rhmy5sr/Capture.PNG');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.4;
+        z-index: -1;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Unplug & Reconnect</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#why-unplug">Why Unplug?</a></li>
+                    <li><a href="#warning-signs">Warning Signs</a></li>
+                    <li><a href="#practical-solutions">Practical Solutions</a></li>
+                    <li><a href="#our-mission">Our Mission</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#get-involved">Get Involved</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Reclaim Your Time. Reclaim Your Life.</h1>
+            <p>Join the movement to consciously reduce social media use and discover a more fulfilling existence.</p>
+            <a href="#get-involved" class="btn">Start Your Journey</a>
+        </section>
+
+        <section id="why-unplug">
+            <div class="container">
+                <h2>The Hidden Cost of Constant Connection</h2>
+                <div class="why-unplug-grid">
+                    <div class="why-item">
+                        <div class="icon">&#129504;</div> <h3>Boost Your Mental Well-being</h3>
+                        <p>Reduce anxiety, depression, and the fear of missing out (FOMO).</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="icon">&#9200;</div> <h3>Reclaim Your Precious Time</h3>
+                        <p>Focus on hobbies, personal goals, and real-life connections.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="icon">&#128101;</div> <h3>Strengthen Real Relationships</h3>
+                        <p>Invest in face-to-face interactions and genuine connections.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="icon">&#128161;</div> <h3>Spark Your Creativity & Focus</h3>
+                        <p>Lessen digital distractions and enhance your productivity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="warning-signs">
+            <div class="container">
+                <h2>Recognize the <span class="highlight-text">Warning Signs</span></h2>
+                <p class="section-description">Understanding the symptoms of social media addiction is the first step toward regaining control of your digital life.</p>
+
+                <div class="warning-signs-grid">
+                    <div class="warning-item">
+                        <div class="icon-box red-border">
+                            <span class="icon">&#9200;</span> </div>
+                        <h3>Time Distortion</h3>
+                        <p>Spending hours scrolling without realizing it, losing track of time regularly.</p>
+                    </div>
+                    <div class="warning-item">
+                        <div class="icon-box red-border">
+                            <span class="icon">&#128226;</span> </div>
+                        <h3>Constant Urges</h3>
+                        <p>Feeling compelled to check notifications even when you're trying to focus.</p>
+                    </div>
+                    <div class="warning-item">
+                        <div class="icon-box green-border">
+                            <span class="icon">&#10084;</span> </div>
+                        <h3>Emotional Dependency</h3>
+                        <p>Your mood depends on likes, comments, and social validation online.</p>
+                    </div>
+                    <div class="warning-item">
+                        <div class="icon-box green-border">
+                            <span class="icon">&#128172;</span> </div>
+                        <h3>Sleep Disruption</h3>
+                        <p>Using devices late at night, affecting your sleep quality and schedule.</p>
+                    </div>
+                    <div class="warning-item">
+                        <div class="icon-box red-border">
+                            <span class="icon">&#128100;</span> </div>
+                        <h3>Social Isolation</h3>
+                        <p>Preferring online interactions over face-to-face relationships.</p>
+                    </div>
+                    <div class="warning-item">
+                        <div class="icon-box red-border">
+                            <span class="icon">&#9888;&#65039;</span> </div>
+                        <h3>Anxiety When Offline</h3>
+                        <p>Feeling anxious or restless when unable to access social media.</p>
+                    </div>
+                </div>
+
+                <div class="warning-callout">
+                    <span class="callout-icon">&#9888;&#65039;</span>
+                    <p>If you recognize <strong>3 or more of these signs</strong>, it may be time to consider a digital detox and seek support for healthier social media habits.</p>
+                </div>
+            </div>
+        </section>
+        <section id="practical-solutions">
+            <div class="container">
+                <h2>Practical Solutions for <span class="highlight-text-green">Digital Wellness</span></h2>
+                <p class="section-description">Small, consistent changes can lead to significant improvements in your relationship with technology and overall well-being.</p>
+
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#9200;</span> </div>
+                        <h3>Set Time Boundaries</h3>
+                        <p>Use app timers and designated phone-free hours. Start with 1-hour breaks and gradually increase.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span> Action Step: <a href="#resources">Download a screen time tracking app today</a>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#128241;</span> </div>
+                        <h3>Create Phone-Free Zones</h3>
+                        <p>Designate bedrooms, dining areas, or study spaces as technology-free environments.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span>
+                            Action Step: Choose one room to make phone-free this week
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#9968;&#65039;</span> </div>
+                        <h3>Reconnect with Nature</h3>
+                        <p>Spend time outdoors without devices. Fresh air and natural settings reduce digital cravings.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span>
+                            Action Step: Take a 20-minute nature walk daily
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#128101;</span> </div>
+                        <h3>Build Real Relationships</h3>
+                        <p>Schedule face-to-face activities with friends and family. Quality time beats virtual connections.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span>
+                            Action Step: Plan one offline activity with a friend
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#128218;</span> </div>
+                        <h3>Develop Offline Hobbies</h3>
+                        <p>Reading, crafts, sports, or music provide fulfilling alternatives to social media scrolling.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span>
+                            Action Step: Pick up a book or try a new creative hobby
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="icon-box green-icon-box">
+                            <span class="icon">&#10084;&#65039;</span> </div>
+                        <h3>Practice Mindfulness</h3>
+                        <p>Meditation and mindfulness exercises help break the cycle of compulsive checking.</p>
+                        <div class="action-step">
+                            <span class="action-icon">&#10146;</span>
+                            Action Step: Try 5 minutes of meditation before bed
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="our-mission">
+            <div class="container">
+                <h2>Our Vision for a More Present World</h2>
+                <div class="content-block">
+                    <p>We believe in empowering individuals to make informed choices about their digital habits. Our mission is to foster a community that values genuine human connection, mindful living, and personal well-being over endless digital consumption. We aim to provide resources and support for everyone looking to find balance in their digital lives.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources">
+            <div class="container">
+                <h2>Tools to Help You Disconnect</h2>
+                <div class="resources-list">
+                    <ul>
+                        <li>
+                            <h3>How to Do a  Digital Detox</h3>
+                            <p>A comprehensive guide to kickstart your journey to less screen time.</p>
+                            <a href="https://toolkit.lifeline.org.au/articles/techniques/how-to-do-a-digital-detox">Read More &rarr;</a>
+                        </li>
+                        <li>
+                            <h3>Seven Reasons To Break Your Smartphone Addiction</h3>
+                            <p>Understand the neurological reasons behind social media's addictive nature.</p>
+                            <a href="https://www.piedmont.org/living-real-change/does-your-smartphone-cause-anxiety#:~:text=Why%20are%20smartphones%20so%20addictive,and%20leads%20to%20a%20letdown.">Read More &rarr;</a>
+                        </li>
+                        <li>
+                            <h3>How to Set Limits on Screen Time</h3>
+                            <p>Practical tips for managing your device usage effectively.</p>
+                            <a href="https://childmind.org/article/how-to-set-limits-on-screen-time/">Read More &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-involved">
+            <div class="container">
+                <h2>Join the Movement. Make a Difference.</h2>
+                <div class="get-involved-grid">
+                    <div class="involved-item">
+                        <h3>Take the 7-Day Unplug Challenge</h3>
+                        <p>Commit to a week of reduced social media and experience the difference.</p>
+                        <a href="https://www.unplugtoreconnect.org/join-the-7-day-tech-free-family-challenge/" class="btn">Take the Challenge</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Unplug & Reconnect. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+</html>
